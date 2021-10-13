@@ -37,7 +37,7 @@ function showActualWeather(response) {
   let actualTemp = document.querySelector("#temp-number");
   actualTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
   let actualHumidity = document.querySelector("#actual-humidity");
-  actualHumidity.innerHTML = `Humidity ${Math.round(
+  actualHumidity.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )}%`;
   let actualDescription = document.querySelector("#description");
