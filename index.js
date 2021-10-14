@@ -41,7 +41,7 @@ function showActualWeather(response) {
     response.data.main.humidity
   )}%`;
   let actualDescription = document.querySelector("#description");
-  actualDescription.innerHTML = `Current conditions: ${response.data.weather[0].description}`;
+  actualDescription.innerHTML = `Current view: ${response.data.weather[0].description}`;
   let actualWindspeed = document.querySelector("#windspeed");
   actualWindspeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
