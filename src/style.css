@@ -70,16 +70,16 @@ h5 {
 .cardtext {
   font-size: 30px;
   text-align: left;
-}
-.cardtextone {
-  display: inline;
+  list-style-type: none;
 }
 
-.date-line {
-  font-size: 30px;
+.card-title {
+  font-size: 35px;
+  font-weight: bold;
   text-align: left;
-  margin-bottom: 0px;
+  list-style-type: none;
 }
+
 .card {
   margin-top: 30px;
   margin-bottom: 30px;
