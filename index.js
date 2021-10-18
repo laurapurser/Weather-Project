@@ -28,14 +28,11 @@ function retrieveCity(event) {
   search(cityname);
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", retrieveCity);
-
 function showActualWeather(response) {
   let heading = document.querySelector("#cardtitle");
   heading.innerHTML = `${response.data.name}`;
   let actualTemp = document.querySelector("#temp-number");
-  actualTemp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  actualTemp.innerHTML = Math.round(response.data.main.temp);
   let actualHumidity = document.querySelector("#actual-humidity");
   actualHumidity.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
@@ -46,10 +43,7 @@ function showActualWeather(response) {
   actualWindspeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
   )}mph`;
-  let feelsLike = document.querySelector("#feelslike");
-  feelsLike.innerHTML = `Feels like: ${Math.round(
-    response.data.main.feels_like
-  )}°C`;
+
   let highTemp = document.querySelector("#high");
   highTemp.innerHTML = `High: ${Math.round(response.data.main.temp_max)}°C`;
   let lowTemp = document.querySelector("#low");
@@ -88,6 +82,10 @@ function displayCelTemp(event) {
   let temperatureElement = document.querySelector("#temp-number");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
+let celsiusTemp = null;
+let form = document.querySelector("form");
+form.addEventListener("submit", retrieveCity);
+
 let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
 

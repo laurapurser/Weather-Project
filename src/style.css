@@ -114,3 +114,12 @@ h5 {
   cursor: default;
   text-decoration: none;
 }
+.cardtexttwo {
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.cardtextthree {
+  font-size: 50px;
+  list-style-type: none;
+}
