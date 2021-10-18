@@ -76,11 +76,15 @@ function getCurrentPosition() {
 function displayFarTemp(event) {
   event.preventDefault();
   let farTemp = (celsiusTemp * 9) / 5 + 32;
+  celLink.classList.remove("active");
+  farLink.classList.add("active");
   let temperatureElement = document.querySelector("#temp-number");
   temperatureElement.innerHTML = Math.round(farTemp);
 }
 function displayCelTemp(event) {
   event.preventDefault();
+  farLink.classList.remove("active");
+  celLink.classList.add("active");
   let temperatureElement = document.querySelector("#temp-number");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
