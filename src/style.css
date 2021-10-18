@@ -102,3 +102,6 @@ h5 {
 .small {
   font-size: 15px;
 }
+li {
+  text-transform: capitalize;
+}
