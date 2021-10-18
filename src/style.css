@@ -63,7 +63,9 @@ h5 {
   margin-top: 30px;
   font-size: 25px;
 }
-
+.card-body {
+  max-height: 400px;
+}
 .submit-button .current-weather {
   background-color: white;
 }
@@ -74,10 +76,11 @@ h5 {
 }
 
 .card-title {
-  font-size: 35px;
+  font-size: 50px;
   font-weight: bold;
   text-align: left;
   list-style-type: none;
+  margin-bottom: 0;
 }
 
 .card {
@@ -95,4 +98,7 @@ h5 {
   text-align: center;
   padding-bottom: 30px;
   font-size: 35px;
+}
+.small {
+  font-size: 15px;
 }

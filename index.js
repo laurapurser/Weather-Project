@@ -11,7 +11,7 @@ if (minutes < 10) {
 }
 let days = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
 let day = days[now.getDay()];
-currentDate.innerHTML = `${day}, ${hours}:${minutes}`;
+currentDate.innerHTML = `${day}, ${hours}:${minutes} BST`;
 
 function search(cityname) {
   let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
