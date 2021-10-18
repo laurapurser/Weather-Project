@@ -35,13 +35,13 @@ function showActualWeather(response) {
   let heading = document.querySelector("#cardtitle");
   heading.innerHTML = `${response.data.name}`;
   let actualTemp = document.querySelector("#temp-number");
-  actualTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  actualTemp.innerHTML = `${Math.round(response.data.main.temp)}`;
   let actualHumidity = document.querySelector("#actual-humidity");
   actualHumidity.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )}%`;
   let actualDescription = document.querySelector("#description");
-  actualDescription.innerHTML = `Current view: ${response.data.weather[0].description}`;
+  actualDescription.innerHTML = `${response.data.weather[0].description}`;
   let actualWindspeed = document.querySelector("#windspeed");
   actualWindspeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
@@ -55,6 +55,8 @@ function showActualWeather(response) {
   let lowTemp = document.querySelector("#low");
   lowTemp.innerHTML = `Low: ${Math.round(response.data.main.temp_min)}°C`;
   console.log(response);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function showPosition(position) {
@@ -71,7 +73,24 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function displayFarTemp(event) {
+  event.preventDefault();
+  let farTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp-number");
+  temperatureElement.innerHTML = Math.round(farTemp);
+}
+function displayCelTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-number");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
 let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
+
+let farLink = document.querySelector("#far-link");
+farLink.addEventListener("click", displayFarTemp);
+
+let celLink = document.querySelector("#cel-link");
+celLink.addEventListener("click", displayCelTemp);

@@ -102,6 +102,10 @@ h5 {
 .small {
   font-size: 15px;
 }
-li {
+
+.celsFar {
+  display: inline;
+}
+.describe {
   text-transform: capitalize;
 }
