@@ -96,7 +96,7 @@ h5 {
 }
 .six-day {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   font-size: 35px;
 }
 .small {
@@ -122,4 +122,20 @@ h5 {
 .cardtextthree {
   font-size: 50px;
   list-style-type: none;
+}
+
+.forecast-temp {
+  font-size: 20px;
+}
+.col-2 {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 10px 10px;
+  width: 150px;
+  display: inline;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 10px;
+  font-size: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
