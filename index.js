@@ -20,7 +20,8 @@ function search(cityname) {
     .get(`${apiUrl}${cityname}&units=metric&appid=${apiKey}`)
     .then(showActualWeather);
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tues"];
@@ -50,6 +51,13 @@ function retrieveCity(event) {
   search(cityname);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function showActualWeather(response) {
   let heading = document.querySelector("#cardtitle");
   heading.innerHTML = `${response.data.name}`;
@@ -73,6 +81,8 @@ function showActualWeather(response) {
   console.log(response);
 
   celsiusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 function showPosition(position) {
@@ -112,7 +122,6 @@ let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
-displayForecast();
 
 let farLink = document.querySelector("#far-link");
 farLink.addEventListener("click", displayFarTemp);
