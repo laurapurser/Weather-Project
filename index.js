@@ -20,6 +20,28 @@ function search(cityname) {
     .get(`${apiUrl}${cityname}&units=metric&appid=${apiKey}`)
     .then(showActualWeather);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tues"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+        ${day}
+    </br>
+    <img src ="https://th.bing.com/th/id/OIP.dfVwM8AoNza3-RZ6HLna0gHaFo?pid=ImgDet&rs=1"
+    width = "45"/>
+  </br> <div class = "forecast-temp">13°C</div>
+    </div>
+    
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function retrieveCity(event) {
   event.preventDefault();
@@ -90,6 +112,7 @@ let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
+displayForecast();
 
 let farLink = document.querySelector("#far-link");
 farLink.addEventListener("click", displayFarTemp);
