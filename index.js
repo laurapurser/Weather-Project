@@ -13,6 +13,12 @@ let days = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
 let day = days[now.getDay()];
 currentDate.innerHTML = `${day}, ${hours}:${minutes} BST`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[day];
+}
 function search(cityname) {
   let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -21,23 +27,27 @@ function search(cityname) {
     .then(showActualWeather);
 }
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tues"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col-2">
-        ${day}
+        ${formatDay(forecastDay.dt)}
     </br>
-    <img src ="https://th.bing.com/th/id/OIP.dfVwM8AoNza3-RZ6HLna0gHaFo?pid=ImgDet&rs=1"
-    width = "45"/>
-  </br> <div class = "forecast-temp">13°C</div>
+    <img src ="http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"
+    width = "50"/>
+  </br> <div class = "forecast-temp">${Math.round(forecastDay.temp.day)}°C</div>
     </div>
     
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

@@ -19,6 +19,7 @@ h5 {
   );
   border: 3px solid black;
   border-radius: 25px;
+  margin-top: 10px;
 }
 
 .favourite {
@@ -117,6 +118,10 @@ h5 {
 .cardtexttwo {
   font-size: 20px;
   list-style-type: none;
+  color: black;
+}
+.cardtexttwo:hover {
+  color: black;
 }
 
 .cardtextthree {
