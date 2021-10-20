@@ -83,6 +83,10 @@ function showActualWeather(response) {
   actualWindspeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
   )}mph`;
+  let feelsLike = document.querySelector("#feelslike");
+  feelsLike.innerHTML = `Feels like: ${Math.round(
+    response.data.main.feels_like
+  )}°C`;
 
   let highTemp = document.querySelector("#high");
   highTemp.innerHTML = `High: ${Math.round(response.data.main.temp_max)}°C`;
