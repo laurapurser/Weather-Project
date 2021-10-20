@@ -72,7 +72,7 @@ function showActualWeather(response) {
   let heading = document.querySelector("#cardtitle");
   heading.innerHTML = `${response.data.name}`;
   let actualTemp = document.querySelector("#temp-number");
-  actualTemp.innerHTML = Math.round(response.data.main.temp);
+  actualTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
   let actualHumidity = document.querySelector("#actual-humidity");
   actualHumidity.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
@@ -113,21 +113,6 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function displayFarTemp(event) {
-  event.preventDefault();
-  let farTemp = (celsiusTemp * 9) / 5 + 32;
-  celLink.classList.remove("active");
-  farLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temp-number");
-  temperatureElement.innerHTML = Math.round(farTemp);
-}
-function displayCelTemp(event) {
-  event.preventDefault();
-  farLink.classList.remove("active");
-  celLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temp-number");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
 let celsiusTemp = null;
 let form = document.querySelector("form");
 form.addEventListener("submit", retrieveCity);
@@ -136,9 +121,3 @@ let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
-
-let farLink = document.querySelector("#far-link");
-farLink.addEventListener("click", displayFarTemp);
-
-let celLink = document.querySelector("#cel-link");
-celLink.addEventListener("click", displayCelTemp);
