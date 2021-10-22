@@ -9,7 +9,15 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-let days = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let day = days[now.getDay()];
 currentDate.innerHTML = `${day}, ${hours}:${minutes} BST`;
 
@@ -26,6 +34,7 @@ function search(cityname) {
     .get(`${apiUrl}${cityname}&units=metric&appid=${apiKey}`)
     .then(showActualWeather);
 }
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -87,7 +96,6 @@ function showActualWeather(response) {
   feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )}°C`;
-
   let highTemp = document.querySelector("#high");
   highTemp.innerHTML = `High: ${Math.round(response.data.main.temp_max)}°C`;
   let lowTemp = document.querySelector("#low");
@@ -113,11 +121,39 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let celsiusTemp = null;
 let form = document.querySelector("form");
 form.addEventListener("submit", retrieveCity);
 
 let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", getCurrentPosition);
+
+function showMaidstoneWeather(favourite) {
+  let cityname = "Maidstone";
+  search(cityname);
+}
+function showHarlowWeather(favourite) {
+  let cityname = "Harlow";
+  search(cityname);
+}
+function showWatfordWeather(favourite) {
+  let cityname = "Watford";
+  search(cityname);
+}
+function showWBayWeather(favourite) {
+  let cityname = "Whitley Bay";
+  search(cityname);
+}
+
+let favouriteWBay = document.querySelector("#favourite-whitleybay");
+favouriteWBay.addEventListener("click", showWBayWeather);
+
+let favouriteWatford = document.querySelector("#favourite-watford");
+favouriteWatford.addEventListener("click", showWatfordWeather);
+
+let favouriteMaidstone = document.querySelector("#favourite-maidstone");
+favouriteMaidstone.addEventListener("click", showMaidstoneWeather);
+
+let favouriteHarlow = document.querySelector("#favourite-harlow");
+favouriteHarlow.addEventListener("click", showHarlowWeather);
 
 search("New York");

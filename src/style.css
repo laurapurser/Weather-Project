@@ -108,6 +108,9 @@ h5 {
   display: inline;
 }
 .describe {
+  display: inline-block;
+}
+.describe::first-letter {
   text-transform: capitalize;
 }
 .card-body .active {
