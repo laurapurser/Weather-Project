@@ -120,13 +120,6 @@ function showPosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-let form = document.querySelector("form");
-form.addEventListener("submit", retrieveCity);
-
-let currentButton = document.querySelector("#current-weather");
-currentButton.addEventListener("click", getCurrentPosition);
-
 function showMaidstoneWeather(favourite) {
   let cityname = "Maidstone";
   search(cityname);
@@ -143,6 +136,12 @@ function showWBayWeather(favourite) {
   let cityname = "Whitley Bay";
   search(cityname);
 }
+
+let form = document.querySelector("form");
+form.addEventListener("submit", retrieveCity);
+
+let currentButton = document.querySelector("#current-weather");
+currentButton.addEventListener("click", getCurrentPosition);
 
 let favouriteWBay = document.querySelector("#favourite-whitleybay");
 favouriteWBay.addEventListener("click", showWBayWeather);
