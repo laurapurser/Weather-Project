@@ -1,0 +1,151 @@
+a {
+  display: inline;
+}
+
+h2 {
+  display: block;
+  text-align: center;
+}
+h5 {
+  font-size: 40px;
+}
+
+.container {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(166, 226, 229) 0%,
+    rgb(198, 232, 221) 100.2%
+  );
+  border: 3px solid black;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.favourite {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 5px 80px;
+  display: block;
+  margin: auto;
+  font-size: 23px;
+  margin-top: 30px;
+  width: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.current-weather {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 5px 80px;
+  display: inline;
+  margin: auto;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-top: 30px;
+  font-size: 25px;
+}
+.submit-button {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 5px 80px;
+  display: inline;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 30px;
+  font-size: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.search-field {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 5px 150px;
+  display: inline;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 30px;
+  font-size: 25px;
+}
+.card-body {
+  max-height: 400px;
+}
+.submit-button .current-weather {
+  background-color: white;
+}
+.cardtext {
+  font-size: 30px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.card-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  border-radius: 25px;
+  border: 3px solid black;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.card-one {
+  padding-bottom: 15px;
+}
+.six-day {
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 35px;
+}
+.small {
+  font-size: 15px;
+}
+
+.celsFar {
+  display: inline;
+}
+.describe {
+  display: inline-block;
+}
+.describe::first-letter {
+  text-transform: capitalize;
+}
+.card-body .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.cardtexttwo {
+  font-size: 20px;
+  list-style-type: none;
+  color: black;
+}
+.cardtexttwo:hover {
+  color: black;
+}
+
+.cardtextthree {
+  font-size: 40px;
+  list-style-type: none;
+}
+
+.forecast-temp {
+  font-size: 20px;
+}
+.col-2 {
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 10px 10px;
+  width: 150px;
+  display: inline;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 10px;
+  font-size: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
