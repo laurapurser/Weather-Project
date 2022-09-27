@@ -1,3 +1,10 @@
+body {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(166, 226, 229) 0%,
+    rgb(198, 232, 221) 100.2%
+  );
+}
 a {
   display: inline;
 }
@@ -9,27 +16,45 @@ h2 {
 h5 {
   font-size: 40px;
 }
-
-.container {
+footer {
+  margin-bottom: 1px;
   font-family: "Be Vietnam Pro", sans-serif;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(166, 226, 229) 0%,
-    rgb(198, 232, 221) 100.2%
-  );
+  text-align: center;
+  margin-top: 2px;
+  font-size: 13px;
+}
+.search-form {
+  position: relative;
+  opacity: 0.9;
+}
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.container {
+  opacity: 0.85;
+  font-family: "Be Vietnam Pro", sans-serif;
+  position: relative;
+  padding: 25px;
   border: 3px solid black;
   border-radius: 25px;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
-
+.favourite-bar {
+  position: relative;
+}
 .favourite {
+  opacity: 0.8;
   border: 3px solid black;
   border-radius: 25px;
   padding: 5px 80px;
   display: block;
   margin: auto;
-  font-size: 23px;
+  font-size: 22px;
   margin-top: 30px;
   width: 100%;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -101,6 +126,7 @@ h5 {
   text-align: center;
   padding-bottom: 15px;
   font-size: 35px;
+  position: relative;
 }
 .small {
   font-size: 15px;
