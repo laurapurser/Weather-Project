@@ -66,16 +66,30 @@ function showActualWeather(response) {
   console.log(response);
 
   celsiusTemp = response.data.main.temp;
-
-  getForecast(response.data.coord);
 }
+// getVideoKeyword(response.data.weather[0].main);
+//let videobackground = document.querySelector("#high");
+//videobackground.addEventListener(onsubmit, changeVideo());
+// getForecast(response.data.coord);
+//}
+//function changeVideo(event) {
+//backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
+//}
+//function getVideoKeyword(response) {
+//console.log(response);
+// if (response === "Clear") {
+// backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
+// } else {
+//   null;
+// }
+//}
 
 //retrieving city coordinates from api call then displaying 5day forecast
 function getForecast(coordinates) {
-  console.log(coordinates);
+  //console.log(coordinates);
   let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  //console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
