@@ -66,23 +66,24 @@ function showActualWeather(response) {
   console.log(response);
 
   celsiusTemp = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 // getVideoKeyword(response.data.weather[0].main);
-//let videobackground = document.querySelector("#high");
-//videobackground.addEventListener(onsubmit, changeVideo());
+// let videobackground = document.querySelector("#high");
+// videobackground.addEventListener(onsubmit, changeVideo());
 // getForecast(response.data.coord);
-//}
-//function changeVideo(event) {
-//backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
-//}
-//function getVideoKeyword(response) {
-//console.log(response);
+// }
+// function changeVideo(event) {
+// backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
+// }
+// function getVideoKeyword(response) {
+// console.log(response);
 // if (response === "Clear") {
 // backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
 // } else {
 //   null;
 // }
-//}
+// }
 
 //retrieving city coordinates from api call then displaying 5day forecast
 function getForecast(coordinates) {
