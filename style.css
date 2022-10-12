@@ -178,6 +178,9 @@ footer {
 }
 
 @media (max-width: 844px) {
+  button {
+    color: black;
+  }
   .favourite {
     display: none;
   }
