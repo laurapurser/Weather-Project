@@ -70,6 +70,7 @@ footer {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   margin-top: 30px;
   font-size: 25px;
+  font-weight: bold;
 }
 .submit-button {
   border: 3px solid black;
