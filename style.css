@@ -62,6 +62,7 @@ footer {
 
 .current-weather {
   border: 3px solid black;
+  color: black;
   border-radius: 25px;
   padding: 5px 80px;
   display: inline;
@@ -76,7 +77,7 @@ footer {
   padding: 5px 80px;
   display: inline;
   margin: auto;
-
+  color: black;
   margin-top: 30px;
   font-size: 25px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -187,11 +188,11 @@ footer {
   }
   .submit-button {
     font-size: 20px;
-    padding: 5px 40px;
+    padding: 5px 50px;
   }
   .current-weather {
     font-size: 20px;
-    padding: 5px 40px;
+    padding: 5px 50px;
     margin-bottom: 10px;
   }
   .card-body {
