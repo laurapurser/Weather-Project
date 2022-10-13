@@ -67,23 +67,40 @@ function showActualWeather(response) {
 
   celsiusTemp = response.data.main.temp;
   getForecast(response.data.coord);
+
+  getVideoKeyword(response.data.weather[0].main);
 }
-// getVideoKeyword(response.data.weather[0].main);
-// let videobackground = document.querySelector("#high");
-// videobackground.addEventListener(onsubmit, changeVideo());
-// getForecast(response.data.coord);
-// }
-// function changeVideo(event) {
-// backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
-// }
-// function getVideoKeyword(response) {
-// console.log(response);
-// if (response === "Clear") {
-// backgroundVideo = document.getElementById("video").src = "img/ClearDay.mp4";
-// } else {
-//   null;
-// }
-// }
+
+// changing video background according to specific weather of searched city
+
+function getVideoKeyword(response) {
+  console.log(response);
+  let x = response;
+
+  switch (x) {
+    case "Clear":
+      document.getElementById("myVideo").src = "img/ClearSky.mp4";
+      break;
+    case "Clouds":
+      document.getElementById("myVideo").src = "img/Clouds3.mp4";
+      break;
+    case "Rain":
+      document.getElementById("myVideo").src = "img/Rain.mp4";
+      break;
+    case "Fog":
+      document.getElementById("myVideo").src = "img/Fog3.mp4";
+      break;
+    case "Mist":
+      document.getElementById("myVideo").src = "img/Fog3.mp4";
+      break;
+    case "Snow":
+      document.getElementById("myVideo").src = "img/Snow.mp4";
+      break;
+    default:
+      document.getElementById("myVideo").src = "img/default.mp4";
+  }
+  document.getElementById("myVideo").playbackRate = 0.5;
+}
 
 //retrieving city coordinates from api call then displaying 5day forecast
 function getForecast(coordinates) {
